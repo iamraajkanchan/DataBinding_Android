@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this , R.layout.activity_main)
-        binding.tvLabel.text = "Introduction of Data Binding"
+        binding.quote = Quote("Hello World!!!", "Raaj Kanchan")
     }
 }
