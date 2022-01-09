@@ -6,14 +6,20 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel()
 {
-    /* When you are using an immutable live data to access the values of mutable live data then you mark its object as private */
-    private val funFactsObject = MutableLiveData(Quote("Save the Strays!!!" , "Raj Kanchan"))
-    val funFacts : LiveData<Quote>
-        get() = funFactsObject
+    private val quotesObject = MutableLiveData(Quote("Life of Stray!" , "Raj Kanchan"))
+    val quotesLive : LiveData<Quote>
+        get() = quotesObject
+    private val releasingObject = MutableLiveData("24th December 2002")
+    val releasing : LiveData<String>
+        get() = releasingObject
 
-    fun updateQuote()
+    fun getQuotes()
     {
-        funFactsObject.value = Quote("Harry Potter and the Goblet of Fire" , "J.K.Rowling")
+        quotesObject.value = Quote("Harry Potter and the Goblet of Fire" , "J.K. Rowling")
     }
 
+    fun getReleasingData()
+    {
+        releasingObject.value = "25th December 2002"
+    }
 }
